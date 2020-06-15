@@ -1,28 +1,66 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app id="inspire">
+    
+    
+    <Drawer/>    
+    
+    <Topbar/>
+
+    <v-main>
+      <v-container
+        class="fill-height"
+        fluid
+      >
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-tooltip right>
+            
+            <span>Source</span>
+          </v-tooltip>
+        </v-row>
+      </v-container>
+    </v-main>
+
+
+    <v-btn
+      bottom
+      color="pink"
+      dark
+      fab
+      fixed
+      right
+      @click="dialog = !dialog"
+    >
+      <v-icon>mdi-plus</v-icon>
+    </v-btn>
+
+
+    <Form/>
+
+
+  </v-app>
 </template>
 
+
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Form from './components/Form';
+import Topbar from  './components/Topbar';
+import Drawer from './components/Drawer';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    Form,
+    Topbar,
+    Drawer,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
